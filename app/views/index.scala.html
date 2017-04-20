@@ -1,0 +1,27 @@
+@(message: String)(implicit wja: WebJarAssets)
+
+@main("BPC - Dashboard") {
+  <link rel="stylesheet" media="all" href="@routes.Assets.at("styles/main.css")">
+} {
+  <div id="body-wrap">
+    <header>
+      <div class="row expanded">
+        <div class="small-12 columns">
+          <h3>Welcome to <strong>BPC-App Project</strong></h3>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="row">
+        <div class="small-12 columns">
+        </div>
+      </section>
+    </main>
+  </div>
+} {
+  <script src='@routes.WebJarAssets.at(wja.fullPath("jquery", "jquery.min.js"))'></script>
+  <script src='@routes.WebJarAssets.at(wja.locate("foundation.js"))'></script>
+  <script src='@routes.WebJarAssets.at(wja.locate("riot.min.js"))'></script>
+  <script src='@routes.Assets.at("scripts/main.js")'></script>
+  <script src='@routes.Assets.at("riot/home.js")'></script>
+}
