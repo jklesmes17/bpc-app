@@ -1,6 +1,50 @@
 @import 'global';
 
 
-header {
-  background: $dark-pink;
+// Side navigation
+#side-nav {
+  color: $white;
+  h1 {
+    font-size: .6rem;
+    padding: 0 1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: scale-color($dark, $lightness: 20%);
+  }
+  .side-nav-header {
+    position: relative;
+    h1 {
+      background-color: $dark-pink;
+      padding: 1.2rem;
+      font-size: 1rem;
+      color: $white;
+    }
+    @include gravatar( 50%, $white, 1.8rem 0 .3rem, 70px );
+    .text-hidden {
+      margin: 0 auto;
+      width: 70%;
+      p {
+        margin-bottom: 0;
+        font-size: .7rem;
+      }
+    }
+  }
+  .side-nav-menu-wrap {
+    padding: {
+      top: 2rem;
+      bottom: 5rem;
+    }
+    .side-nav-menu {
+      li {
+        padding: .5rem 0;
+      }
+    }
+  }
+}
+
+// Top Menu
+#top-header {
+  position: relative;
+  background-color: $dark-pink;
+  padding: .64rem 0;
 }

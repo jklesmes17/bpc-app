@@ -37,3 +37,25 @@
 @include foundation-title-bar;
 @include foundation-tooltip;
 @include foundation-top-bar;
+
+
+@mixin gravatar($radius, $border-color, $margin, $size, $padding: .1rem) {
+  .gravatar {
+    img {
+      border-radius: $radius;
+      height: $size;
+      width: $size;
+      padding: $padding;
+      border: 1px solid $border-color;
+      margin: $margin;
+    }
+  }
+}
+
+
+// Off Canvas
+.off-canvas-wrapper {
+  #sidenav-off-canvas {
+    height: 100%
+  }
+}

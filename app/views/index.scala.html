@@ -3,25 +3,42 @@
 @main("BPC - Dashboard") {
   <link rel="stylesheet" media="all" href="@routes.Assets.at("styles/main.css")">
 } {
-  <div id="body-wrap">
-    <header>
-      <div class="row expanded">
-        <div class="small-12 columns">
-          <h3>Welcome to <strong>BPC-App Project</strong></h3>
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <aside class="off-canvas position-left" id="sidenav-off-canvas" data-off-canvas>
+        <side-nav></side-nav>
+      </aside>
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div id="top-header">
+          <top-nav></top-nav>
         </div>
+        <main>
+          <section class="row expanded">
+            <div class="small-12 columns">
+              <h1>Dashboard</h1>
+            </div>
+          </section>
+        </main>
+        </section>
       </div>
-    </header>
-    <main>
-      <section class="row">
-        <div class="small-12 columns">
-        </div>
-      </section>
-    </main>
+    </div>
   </div>
 } {
   <script src='@routes.WebJarAssets.at(wja.fullPath("jquery", "jquery.min.js"))'></script>
   <script src='@routes.WebJarAssets.at(wja.locate("foundation.js"))'></script>
   <script src='@routes.WebJarAssets.at(wja.locate("riot.min.js"))'></script>
+  <script>
+    window.bpc = {}
+  </script>
+
+  <!-- Common -->
+  <script src='@routes.Assets.at("scripts/helpers.js")'></script>
   <script src='@routes.Assets.at("scripts/main.js")'></script>
+
+  <!-- Templates -->
+  <script src='@routes.Assets.at("riot/templates/side-nav.js")'></script>
+  <script src='@routes.Assets.at("riot/templates/top-nav.js")'></script>
+
+  <!-- Pages -->
   <script src='@routes.Assets.at("riot/home.js")'></script>
 }
