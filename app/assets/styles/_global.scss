@@ -38,6 +38,14 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 
+/* ---------------------------------------------------
+  mixin
+--------------------------------------------------- */
+@mixin prefix($property, $value) {
+   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+      #{$prefix}#{$property}: $value;
+   }
+}
 
 @mixin gravatar($radius, $border-color, $margin, $size, $padding: .1rem) {
   .gravatar {
@@ -52,6 +60,41 @@
   }
 }
 
+@mixin anchor-color($color:$white,$hover:$orange) {
+  a { color: $color;
+    &:hover { color: $hover;}
+  }
+}
+
+/* ---------------------------------------------------
+  common
+--------------------------------------------------- */
+body {
+  background-color: $dirty-white;
+  -webkit-font-smoothing: antialiased;
+  .disabled { pointer-events: none; }
+  &.loaded .loader { display: none; }
+  &:not(.loaded) {
+    .loader {
+      background-color: $white;
+      display: block;
+      height: 100%!important;
+      opacity: .95;
+      position: absolute;
+      width: 100%!important;
+      z-index: 9000;
+      .loader--style1 {
+        margin: 20% auto;
+      }
+    }
+  }
+  &.is-reveal-open > div:first-child {
+    @include prefix(filter, blur(3px));
+  }
+  @include breakpoint(small only) {
+    font-size: 95%;
+  }
+}
 
 // Off Canvas
 .off-canvas-wrapper {
@@ -59,3 +102,16 @@
     height: 100%
   }
 }
+
+// Dropdown accordion
+.is-accordion-submenu {
+  font-size: 85%;
+  background: $side-subnav-back;
+  box-shadow: inset 0 0 3px $black;
+
+  &-parent {
+    > a::after { margin-top: -1px; }
+  }
+}
+
+

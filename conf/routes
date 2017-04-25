@@ -2,13 +2,35 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
-# An example controller showing how to use dependency injection
-GET     /count                      controllers.CountController.count
-# An example controller showing how to write asynchronous code
-GET     /message                    controllers.AsyncController.message
+# Common
+GET     /inventory                              controllers.HomeController.launcher
+GET     /purchases                              controllers.HomeController.launcher
+GET     /production                             controllers.HomeController.launcher
+GET     /sales                                  controllers.HomeController.launcher
+GET     /delivery                               controllers.HomeController.launcher
+GET     /e-commerce                             controllers.HomeController.launcher
+
+# Accounting and Finance
+GET     /account-finance/budget                 controllers.HomeController.launcher
+GET     /account-finance/accounts-payable        controllers.HomeController.launcher
+GET     /account-finance/accounts-receivable     controllers.HomeController.launcher
+GET     /account-finance/general-ledger         controllers.HomeController.launcher
+
+# Fixed Assets
+GET     /fixed-assets/inflows-and-inventory     controllers.HomeController.launcher
+GET     /fixed-assets/transfers                 controllers.HomeController.launcher
+GET     /fixed-assets/repairs-and-maintenance   controllers.HomeController.launcher
+GET     /fixed-assets/general-ledger            controllers.HomeController.launcher
+
+# CRM
+GET     /crm/payroll                            controllers.HomeController.launcher
+GET     /crm/human-resource                     controllers.HomeController.launcher
+GET     /crm/balance-score-card                 controllers.HomeController.launcher
+GET     /crm/performance-management-system      controllers.HomeController.launcher
+GET     /crm/loyalty                            controllers.HomeController.launcher
+GET     /crm/sms-blast                          controllers.HomeController.launcher
+GET     /crm/customer-feedback                  controllers.HomeController.launcher
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /wj-assets/*file            controllers.WebJarAssets.at(file)
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /wj-assets/*file                        controllers.WebJarAssets.at(file)
+GET     /assets/*file                           controllers.Assets.at(path="/public", file)

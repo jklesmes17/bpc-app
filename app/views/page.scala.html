@@ -1,0 +1,64 @@
+@()(implicit wja: WebJarAssets)
+
+@main("BPC - Dashboard") {
+  <link rel="stylesheet" media="all" href="@routes.Assets.at("styles/main.css")">
+} {
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <aside class="off-canvas position-left" id="sidenav-off-canvas" data-off-canvas>
+        <side-nav></side-nav>
+      </aside>
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div id="top-header">
+          <top-nav></top-nav>
+        </div>
+        <main id="content" class="row align-center">
+          <div id="content-body" class="small-12 medium-8 columns"></div>
+        </main>
+      </div>
+    </div>
+  </div>
+} {
+  <script src='@routes.WebJarAssets.at(wja.fullPath("jquery", "jquery.min.js"))'></script>
+  <script src='@routes.WebJarAssets.at(wja.locate("foundation.js"))'></script>
+  <script src='@routes.WebJarAssets.at(wja.locate("riot.min.js"))'></script>
+  <script> window.bpc = {} </script>
+
+  <!-- Common -->
+  <script src='@routes.Assets.at("scripts/helpers.js")'></script>
+  <script src='@routes.Assets.at("scripts/app.js")'></script>
+  <script src='@routes.Assets.at("scripts/main.js")'></script>
+
+  <!-- Templates -->
+  <script src='@routes.Assets.at("riot/templates/side-nav.js")'></script>
+  <script src='@routes.Assets.at("riot/templates/top-nav.js")'></script>
+
+  <!-- Pages -->
+  <script src='@routes.Assets.at("riot/inventory.js")'></script>
+  <script src='@routes.Assets.at("riot/purchases.js")'></script>
+  <script src='@routes.Assets.at("riot/production.js")'></script>
+  <script src='@routes.Assets.at("riot/sales.js")'></script>
+  <script src='@routes.Assets.at("riot/delivery.js")'></script>
+  <script src='@routes.Assets.at("riot/ecommerce.js")'></script>
+
+  <!-- Accounting and Finance -->
+  <script src='@routes.Assets.at("riot/AAF/budget.js")'></script>
+  <script src='@routes.Assets.at("riot/AAF/accountsPayable.js")'></script>
+  <script src='@routes.Assets.at("riot/AAF/accountsReceivable.js")'></script>
+  <script src='@routes.Assets.at("riot/AAF/generalLedger.js")'></script>
+
+  <!-- Fixed Assets -->
+  <script src='@routes.Assets.at("riot/FA/inflowsInventory.js")'></script>
+  <script src='@routes.Assets.at("riot/FA/transfers.js")'></script>
+  <script src='@routes.Assets.at("riot/FA/repairMaintenance.js")'></script>
+  <script src='@routes.Assets.at("riot/FA/generalLedger.js")'></script>
+
+  <!-- CRM -->
+  <script src='@routes.Assets.at("riot/CRM/payroll.js")'></script>
+  <script src='@routes.Assets.at("riot/CRM/humanResource.js")'></script>
+  <script src='@routes.Assets.at("riot/CRM/balanceScoreCard.js")'></script>
+  <script src='@routes.Assets.at("riot/CRM/performanceSys.js")'></script>
+  <script src='@routes.Assets.at("riot/CRM/loyalty.js")'></script>
+  <script src='@routes.Assets.at("riot/CRM/smsBlast.js")'></script>
+  <script src='@routes.Assets.at("riot/CRM/customerFeedback.js")'></script>
+}

@@ -8,14 +8,19 @@
           </a>
         </li>
         <li>
-          <a href="javascript:;" data-toggle="sidenav-off-canvas">
+          <a href="javascript:;">
             <i class="icon-setting"></i>
           </a>
         </li>
         <li>
-          <a href="javascript:;" data-toggle="sidenav-off-canvas">
+          <a href="javascript:;">
             <i class="icon-clock"></i>
           </a>
+        </li>
+        <li>
+          <div class="gravatar">
+            <img src='/assets/images/images.jpg'>
+          </div>
         </li>
       </ul>
     </div>
