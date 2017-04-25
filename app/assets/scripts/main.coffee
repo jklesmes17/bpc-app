@@ -3,7 +3,7 @@ $(document).ready ->
 
   helper = bpc.Helpers.factory()
 
-  riot.mount 'side-nav, top-nav'
+  riot.mount 'side-nav, top-nav, reveal-process'
   helper.commonHeight('.off-canvas-content')
   $('#sidenav-off-canvas').foundation 'open'
 

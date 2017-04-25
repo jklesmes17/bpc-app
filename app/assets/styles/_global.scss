@@ -114,4 +114,223 @@ body {
   }
 }
 
+/* ---------------------------------------------------
+  reveal
+--------------------------------------------------- */
+.reveal {
+  outline: none;
+  @include breakpoint(medium up) {
+    &.tiny { width: 350px;}
+    &.small { width: 450px;}
+    &.large { max-width: 550px;}
+  }
+  header {
+    text-align: center;
+    padding: 1.5rem 1.5rem 1rem;
+  }
+  .reveal-body {
+    overflow: hidden;
+    padding-bottom: 1rem;
+    @include flex-grid-column(12, 1.5rem);
+  }
+  .reveal-text {
+    padding: 1.2rem 1.5rem 0;
+    border-top: solid 1px $border-gray;
+    p { word-break: normal;}
+  }
+  footer {
+    &.button-group {
+      display: flex;
+      margin-bottom: 0;
+      input { margin-bottom: 0;}
+    }
+  }
+  .panel {
+    .columns {
+      @include flex-grid-column(null, 10px);
+      &.shrink {
+        flex: inherit;
+      }
+    }
+  }
+  @include breakpoint(small only) {
+    &:not(.expand-reveal) {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-y: initial;
+      position: relative;
+      padding: 0rem;
+      height: auto;
+      min-height: auto;
+    }
+  }
+}
 
+//typo
+.reveal {
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  input, select, textarea { margin-bottom: .3rem; }
+  label {
+    font-size: .6rem;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    line-height: 2;
+  }
+  &:not(.expand-reveal) .reveal-body,
+  &:not(.expand-reveal) .reveal-text {
+    @include anchor-color($dark-pink, scale-color($dark-pink, $lightness: -14%));
+  }
+  footer {
+    .button { font-size: .8rem;}
+  }
+  @include breakpoint(small only) {
+    font-size: 85%;
+    li { font-size: 85%;}
+    h3 { font-size: .9rem;}
+  }
+}
+
+/* ---------------------------------------------------
+  Buttons
+--------------------------------------------------- */
+.button {
+  &.rounded {
+    border-radius: 50%;
+    padding: .4rem .4rem .35rem;
+    font-size: .5rem;
+  }
+  &.black {
+    color: $white;
+    background-color: $dark-gray;
+  }
+  &.hollow {
+    &.active {
+      color: $white;
+      background-color: $dark-pink;
+    }
+  }
+  &.form-button {
+    padding: .5rem .6rem;
+    color: $body-font-color;
+    background-color: $dirty-white;
+    border: 1px solid $border-gray;
+    @include prefix(box-shadow, 0px 1px 5px 0px rgba(0,0,0,0.15));
+    &:hover {
+      border-color: $dark-gray;
+      @include prefix(box-shadow, 0px 1px 2px 0px rgba(0,0,0,0.15));
+    }
+  }
+}
+
+/* ---------------------------------------------------
+  Loader
+--------------------------------------------------- */
+@mixin prefix-one($prefix, $property, $value) {
+   @each $prefix in $prefix, '' {
+      #{$prefix}#{$property}: $value;
+   }
+}
+
+.loader {
+  &--style1 {
+    margin: 2rem auto 0;
+    border: {
+      bottom: 6px solid $white;
+      left: 6px solid $dark-pink;
+      right: 6px solid $dark-pink;
+      top: 6px solid $dark-pink;
+      radius: 100%;
+    }
+    height: 70px;
+    width: 70px;
+    @include prefix(animation, spin 1s infinite linear);
+  }
+  &--style2 {
+    border: {
+      bottom: 6px solid transparent;
+      left: 6px solid $dark-pink;
+      right: 6px solid $dark-pink;
+      top: 6px solid $dark-pink;
+      radius: 100%;
+    }
+    height: 50px;
+    width: 50px;
+    margin: -1rem auto;
+    position: relative;
+    top: 50%;
+    @include prefix(animation, spin 1s infinite linear);
+  }
+  &--img, &--complete {
+    width: 80px;
+    height: 80px;
+  }
+  &--img {
+    @include prefix(animation, spin 1s infinite linear);
+  }
+  &--logo {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    -webkit-animation: foldrotate 2.5s infinite linear both;
+  }
+  > .svg {
+    height: 100px;
+    margin-top: -1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    fill: url("#MyGradient");
+    -webkit-animation: huerotate 600ms infinite alternate;
+  }
+}
+
+@keyframes foldrotate {
+  opacity: 1;
+  0%, 10%{
+    -webkit-transform: perspective(140px) rotateY(0deg);
+  }
+  25%, 75%{
+    -webkit-transform: perspective(140px) rotateX(0deg);
+  }
+  90%, 100%{
+    -webkit-transform: perspective(140px) rotateY(360deg);
+  }
+}
+
+@keyframes huerotate {
+  0% { -webkit-filter: saturate(1) sepia(0); }
+  100% { -webkit-filter: saturate(5.2); }
+}
+
+@keyframes "spin" {
+ from { @include prefix(transform, rotate(0deg));}
+ to { @include prefix(transform, rotate(359deg));}
+}
+
+@-moz-keyframes spin {
+ from { @include prefix-one(-moz-, transform, rotate(0deg));}
+ to { @include prefix-one(-moz-, transform, rotate(359deg));}
+}
+
+@-webkit-keyframes "spin" {
+ from { @include prefix-one(-webkit-, transform, rotate(0deg));}
+ to { @include prefix-one(-webkit-, transform, rotate(359deg));}
+}
+
+@-ms-keyframes "spin" {
+ from { @include prefix-one(-ms-, transform, rotate(0deg));}
+ to { @include prefix-one(-ms-, transform, rotate(359deg));}
+}
+
+@-o-keyframes "spin" {
+ from { @include prefix-one(-o-, transform, rotate(0deg));}
+ to { @include prefix-one(-o-, transform, rotate(359deg));}
+}

@@ -4,71 +4,71 @@ riot.route.start true
 
 
 riot.route('/inventory', ->
-  riot.mount('#content-body', 'inventory')
+  riot.mount('#content', 'inventory')
 )
 
 riot.route('/purchases', ->
-  riot.mount('#content-body', 'purchases')
+  riot.mount('#content', 'purchases')
 )
 
 riot.route('/production', ->
-  riot.mount('#content-body', 'production')
+  riot.mount('#content', 'production')
 )
 
 riot.route('/sales', ->
-  riot.mount('#content-body', 'sales')
+  riot.mount('#content', 'sales')
 )
 
 riot.route('/delivery', ->
-  riot.mount('#content-body', 'delivery')
+  riot.mount('#content', 'delivery')
 )
 
 riot.route('/delivery', ->
-  riot.mount('#content-body', 'delivery')
+  riot.mount('#content', 'delivery')
 )
 
 riot.route('/e-commerce', ->
-  riot.mount('#content-body', 'e-commerce')
+  riot.mount('#content', 'e-commerce')
 )
 
 riot.route('/account-finance/*', (sub) ->
   switch sub
     when 'budget'
-      riot.mount('#content-body', 'budget')
+      riot.mount('#content', 'budget')
     when 'accounts-payable'
-      riot.mount('#content-body', 'accounts-payable')
+      riot.mount('#content', 'accounts-payable')
     when 'accounts-receivable'
-      riot.mount('#content-body', 'accounts-receivable')
+      riot.mount('#content', 'accounts-receivable')
     when 'general-ledger'
-      riot.mount('#content-body', 'aaf-general-ledger')
+      riot.mount('#content', 'aaf-general-ledger')
 )
 
 riot.route('/fixed-assets/*', (sub) ->
   switch sub
     when 'inflows-and-inventory'
-      riot.mount('#content-body', 'inflows-inventory')
+      riot.mount('#content', 'inflows-inventory')
     when 'transfers'
-      riot.mount('#content-body', 'transfers')
+      riot.mount('#content', 'transfers')
     when 'repairs-and-maintenance'
-      riot.mount('#content-body', 'repair-maintenance')
+      riot.mount('#content', 'repair-maintenance')
     when 'general-ledger'
-      riot.mount('#content-body', 'fa-general-ledger')
+      riot.mount('#content', 'fa-general-ledger')
 )
 
 riot.route('/crm/*', (sub) ->
   switch sub
     when 'payroll'
-      riot.mount('#content-body', 'payroll')
+      riot.mount('#content', 'payroll')
     when 'human-resource'
-      riot.mount('#content-body', 'human-resource')
+      riot.mount('#content', 'human-resource')
     when 'balance-score-card'
-      riot.mount('#content-body', 'balance-score-card')
+      riot.mount('#content', 'balance-score-card')
     when 'performance-management-system'
-      riot.mount('#content-body', 'performance-mgt-sys')
+      riot.mount('#content', 'performance-mgt-sys')
     when 'loyalty'
-      riot.mount('#content-body', 'loyalty')
+      riot.mount('#content', 'loyalty')
     when 'sms-blast'
-      riot.mount('#content-body', 'sms-blast')
+      riot.mount('#content', 'sms-blast')
     when 'customer-feedback'
-      riot.mount('#content-body', 'customer-feedback')
+      riot.mount('#content', 'customer-feedback')
 )

@@ -13,15 +13,16 @@
           <top-nav></top-nav>
         </div>
         <main id="content" class="row align-center">
-          <div id="content-body" class="small-12 medium-8 columns"></div>
         </main>
       </div>
     </div>
   </div>
+  <reveal-process></reveal-process>
 } {
   <script src='@routes.WebJarAssets.at(wja.fullPath("jquery", "jquery.min.js"))'></script>
   <script src='@routes.WebJarAssets.at(wja.locate("foundation.js"))'></script>
   <script src='@routes.WebJarAssets.at(wja.locate("riot.min.js"))'></script>
+  <script src='@routes.WebJarAssets.at(wja.locate("lodash.min.js"))'></script>
   <script> window.bpc = {} </script>
 
   <!-- Common -->
@@ -32,6 +33,7 @@
   <!-- Templates -->
   <script src='@routes.Assets.at("riot/templates/side-nav.js")'></script>
   <script src='@routes.Assets.at("riot/templates/top-nav.js")'></script>
+  <script src='@routes.Assets.at("riot/templates/reveal-process.js")'></script>
 
   <!-- Pages -->
   <script src='@routes.Assets.at("riot/inventory.js")'></script>

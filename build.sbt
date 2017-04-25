@@ -20,6 +20,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "jquery" % "2.2.2",
   "org.webjars" % "riot" % "2.6.5",
   "org.webjars" % "foundation" % "6.2.3",
+  "org.webjars.bower" % "lodash" % "4.17.4",
   "org.webjars.bower" % "compass-mixins" % "1.0.2"
 )
 
